@@ -27,7 +27,14 @@
         function setaltura($altura) { $this->altura=$altura; }
 
         function mostrar() {
-            echo "Soy " . $this->nombre . " con DNI: " .  $this->DNI . ", sexo:" . $this->sexo . ", peso:" . $this->peso . ", altura:" . $this->altura; 
+            echo "Soy " . $this->nombre . " con DNI: " .  $this->DNI . ", sexo:" . $this->sexo . ", peso:" . $this->peso . ", altura:" . $this->altura;
+            echo "<br>"; 
+        }
+
+        function __toString()
+        {
+            return "Soy " . $this->nombre . " con DNI: " .  $this->DNI . ", sexo:" . $this->sexo . ", peso:" . $this->peso . ", altura:" . $this->altura;
+            echo "<br>"; 
         }
     }
 

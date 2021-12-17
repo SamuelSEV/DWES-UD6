@@ -23,11 +23,14 @@
         function mostrarCompleto() {
             echo $this->mostrar() . " empresa: " . $this->empresa; 
         }
+
+        function __toString()
+        {
+            return parent::__toString() . ". Empresa: " . $this->empresa; 
+        }
     }
 
-    
     $trabajador = new Trabajador("samuel","22222223E","V",80,180,"Ayesa");
-    $trabajador->mostrar();
-    $trabajador->mostrarCompleto();
+    echo $trabajador;
 
 ?>
