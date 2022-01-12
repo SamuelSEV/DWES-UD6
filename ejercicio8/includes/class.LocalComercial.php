@@ -1,5 +1,4 @@
 <?php
-    include_once("class.local.php");
 
     class LocalComercial extends Local {
 
@@ -13,7 +12,7 @@
             $this->numLicencia = $this->checkString($numLicencia);
         }
 
-        function checkString($string) {
+        private function checkString($string) {
 
             if (is_string($string)) {
                 return $string;
