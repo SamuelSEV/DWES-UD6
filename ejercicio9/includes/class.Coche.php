@@ -44,7 +44,7 @@
         {
             parent::añadir_persona($pesoPersona);
             if ($this->peso >= 1500 && $this->numero_cadenas_nieve <= 2) {
-                echo "Atención, ponga 4 cadenas para la nieve.";
+                echo "Atención, ponga 4 cadenas para la nieve. <br>";
             }
         }
         
