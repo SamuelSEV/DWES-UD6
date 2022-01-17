@@ -14,9 +14,37 @@
             $this->color = $color;
         }
 
+        public function __get($parametro) 
+        {
+            if(property_exists(get_class(),$parametro)){
+                return $this->$parametro;
+            }
+            else {
+                return parent::__get($parametro);
+            }
+            
+        }
+
+        public function __set($parametro, $value) 
+        {
+            if(property_exists(get_class(),$parametro)){
+                
+                $this->$parametro=$value;
+            }
+            else {
+                parent::__set($parametro, $value);
+            }
+            
+        }
+
         public function getPuertas()
         {
             return $this->numero_puertas;
+        }
+
+        public function setPuertas($numero_puertas)
+        {
+            $this->numero_puertas = $numero_puertas;
         }
 
         public function añadir_persona($peso_persona) 

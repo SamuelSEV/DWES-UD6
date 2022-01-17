@@ -14,10 +14,29 @@
             $this->peso += $litros*1.5;
         }
 
-        public function getCilindrada()
+        public function __get($parametro) 
         {
-            return $this->cilindrada;
+            if(property_exists(get_class(),$parametro)){
+                return $this->$parametro;
+            }
+            else {
+                return parent::__get($parametro);
+            }
+            
         }
+
+        public function __set($parametro, $value) 
+        {
+            if(property_exists(get_class(),$parametro)){
+                
+                $this->$parametro=$value;
+            }
+            else {
+                parent::__set($parametro, $value);
+            }
+            
+        }
+        
         public function añadir_persona($peso_persona) 
         {
             $this->peso+=$peso_persona+1.5;

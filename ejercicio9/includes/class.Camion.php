@@ -13,13 +13,27 @@
             $this->longitud += $longitud_remolque;
         }
 
-        public function __get($parametro)
+        public function __get($parametro) 
         {
-            return $this->$parametro;
+            if(property_exists(get_class(),$parametro)){
+                return $this->$parametro;
+            }
+            else {
+               return parent::__get($parametro);
+            }
+            
         }
-        public function __set($parametro, $valor)
+
+        public function __set($parametro, $value) 
         {
-            $this->$parametro=$valor;
+            if(property_exists(get_class(),$parametro)){
+                
+                $this->$parametro=$value;
+            }
+            else {
+                parent::__set($parametro, $value);
+            }
+            
         }
     
     }
