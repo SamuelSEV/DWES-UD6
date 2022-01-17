@@ -37,16 +37,6 @@
             
         }
 
-        public function getPuertas()
-        {
-            return $this->numero_puertas;
-        }
-
-        public function setPuertas($numero_puertas)
-        {
-            $this->numero_puertas = $numero_puertas;
-        }
-
         public function añadir_persona($peso_persona) 
         {
             if (parent::setPeso($peso_persona)){

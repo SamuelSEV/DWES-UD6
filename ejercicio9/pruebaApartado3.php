@@ -11,7 +11,7 @@
     $coche->repintar('Amarillo');
     $coche->añadir_cadenas_nieve(3);
 
-    echo "El vehiculo es color: " .  $coche->color . " y lleva  " . $coche->getCadenas() . " cadenas";
+    echo "El vehiculo es color: " .  $coche->color . " y lleva  " . $coche->numero_cadenas_nieve . " cadenas";
     echo "<br>";
     $moto = new Dos_ruedas(30, 'Marron',500);
 

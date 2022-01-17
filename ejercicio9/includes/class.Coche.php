@@ -17,16 +17,6 @@
             $this->numero_cadenas_nieve -= $numero;
         }
 
-        public function getCadenas()
-        {
-            return $this->numero_cadenas_nieve;
-        }
-
-        public function setCadenas($numero_cadenas_nieve)
-        {
-            $this->numero_cadenas_nieve = $numero_cadenas_nieve;
-        }
-
         public function __get($parametro) 
         {
             if(property_exists(get_class(),$parametro)){
