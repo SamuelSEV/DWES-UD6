@@ -49,7 +49,9 @@
 
         public function añadir_persona($peso_persona) 
         {
-            $this->peso+=$peso_persona;
+            if (parent::setPeso($peso_persona)){
+                $this->peso+=$peso_persona;
+            }
         } 
     }
 ?>

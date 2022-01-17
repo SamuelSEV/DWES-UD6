@@ -49,6 +49,14 @@
             }
             
         }
+
+        public function añadir_persona($pesoPersona)
+        {
+            parent::añadir_persona($pesoPersona);
+            if ($this->peso >= 1500 && $this->numero_cadenas_nieve <= 2) {
+                return "Atención, ponga 4 cadenas para la nieve.";
+            }
+        }
         
     }
 ?>

@@ -10,8 +10,13 @@
     echo "<br>";
     $moto->color = 'Verde';
     $moto->cilindrada = 1000;
+    echo "Moto: <br>";
     Vehiculo::ver_atributo($moto);
-
-    $coche = new Coche(200, 'naranja', 0, 4);
-    Vehiculo::ver_atributo($coche);
+    echo "<br>";
+    echo "Camion: <br>";
+    $camion = new Camion(6000, 'blanco', 0, 5);
+    $camion->añadir_persona(84);
+    $camion->repintar('azul');
+    $camion->numero_puertas += 2;
+    Vehiculo::ver_atributo($camion);
 ?>
