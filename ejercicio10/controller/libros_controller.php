@@ -7,5 +7,11 @@
         $libros = getLibros();
         include 'views/libros_view.php';
     }
+
+    function mostrarLibro() {
+        require 'models/libros_model.php';
+        include 'views/libro_view.php';
+        $libro = getLibro($_GET['id']);
+    }
     
 ?>
