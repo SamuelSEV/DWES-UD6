@@ -1,11 +1,11 @@
 <html>
 
 <head>
-    <title>Libro</title>
+    <title>Periodico</title>
 </head>
 
 <body>
-    <h1>Libro consultado</h1>
+    <h1>Periodico consultado</h1>
     <table border="1">
         <tr>
             <th>Nombre</th>
