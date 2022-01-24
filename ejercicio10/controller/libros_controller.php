@@ -9,9 +9,9 @@
     }
 
     function mostrarLibro() {
-        require 'models/libros_model.php';
-        include 'views/libro_view.php';
+        require 'models/libros_model.php';        
         $libro = getLibro($_GET['id']);
+        include 'views/libro_view.php';
     }
     
 ?>

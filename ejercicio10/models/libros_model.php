@@ -17,12 +17,12 @@
 
     function getLibro($id) {
         $db = getConnection();
-        $result =  $db->query('SELECT titulo, precio FROM libros WHERE id = ?');
-        $result = $db->prepare($result);
+        $result = $db->prepare('SELECT * FROM libros WHERE id = ?');
         $result->bindParam(1, $id);
         $result->execute();
-        $libro=$result->fetchAll();
         
+        $libro=$result->fetch();
+    
         return $libro;
     }
     
