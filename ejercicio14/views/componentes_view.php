@@ -39,7 +39,7 @@
                     echo "<td>" . $key['cantidad'] . "</td>";
                     echo "<td>" . $key['fechalanzamiento'] . "</td>";
                     echo "<td>" . $key['imagen'] . "</td>";
-                    echo "<td><a href='index.php?controller=componentes&action=mostrarComponente&id=" . $key['id'] . "'><i class='fas fa-search'></i></a></td>";
+                    echo "<td><a href='index.php?controller=componentes&action=detalleComponente&id=" . $key['id'] . "'><i class='fas fa-search'></i></a></td>";
                     echo "<td><a href='index.php?controller=componentes&action=editarComponente&id=" . $key['id'] . "'><i class='fas fa-edit'></i></a></td>";
                     echo "<td><a href='index.php?controller=componentes&action=eliminarComponente&id=" . $key['id'] . "'><i class='fas fa-trash-alt'></i></a></td>";
                     echo "</tr>";

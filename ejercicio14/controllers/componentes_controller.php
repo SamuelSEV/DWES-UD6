@@ -11,7 +11,12 @@
         require 'models/componentes_model.php';        
         $componente = obtenerElemento($_GET['id']);
         include 'views/componente_view.php';
-        include 'views/view.php';
+    }
+
+    function detalleComponente() {
+        require 'models/componentes_model.php';        
+        $componente = obtenerElemento($_GET['id']);
+        include 'views/componente_detalle_view.php';
     }
 
     function eliminarComponente() {
@@ -26,7 +31,7 @@
             $correcto = "Se ha eliminado el elemento  correctamente";
         }
         include 'views/componente_view.php';
-        include 'views/delete.php';
+        include 'views/componente_delete_view.php';
     }
 
     function editarComponente() {
@@ -98,7 +103,7 @@
                 }
             }
         }
-        include 'views/edit.php'; 
+        include 'views/componente_edit_view.php'; 
     }
     
 ?>
