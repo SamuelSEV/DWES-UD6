@@ -39,7 +39,7 @@
                     echo "<td>" . $componente['cantidad'] . "</td>";
                     echo "<td>" . $componente['fechalanzamiento'] . "</td>";
                     echo "<td>" . $componente['imagen'] . "</td>";
-                    echo "<td><a href='componente_view.php?id=" . $componente['id'] . "'><i class='fas fa-search'></i></a></td>";
+                    echo "<td><a href='index.php?controller=componentes&action=mostrarComponente&id=" . $componente['id'] . "'><i class='fas fa-search'></i></a></td>";
                     echo "<td><a href='index.php?controller=componentes&action=editarComponente&id=" . $componente['id'] . "'><i class='fas fa-edit'></i></a></td>";
                     echo "<td><a href='delete.php?id=" . $componente['id'] . "'><i class='fas fa-trash-alt'></i></a></td>";
                     echo "</tr>";

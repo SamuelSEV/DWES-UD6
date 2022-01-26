@@ -72,5 +72,20 @@
             return false;
         }
     }
+
+    function eliminarElemento($id){
+        try {
+            $conn = getConnection();
+            $eliminar = $conn->prepare("DELETE FROM componentes WHERE id=?");
+            $eliminar->bindParam(1, $id);
+            $eliminar->execute();
+            $retorno = $eliminar->execute();
+            $conn = null;
+            return $retorno;
+        } catch (PDOException $e) {
+            return false;
+        }
+
+    }
     
 ?>
