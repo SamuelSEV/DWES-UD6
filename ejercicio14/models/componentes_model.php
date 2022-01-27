@@ -1,4 +1,5 @@
 <?php
+
     function getConnection() {
         $user = 'developer';
         $pwd = 'developer';
@@ -87,5 +88,41 @@
         }
 
     }
-    
+
+    function getUser($username) {
+        try {
+            $conn = getConnection();
+            $usuario = $conn->prepare("SELECT * FROM usuarios WHERE nombre = ?");
+            $usuario->bindParam(1, $username);
+
+            $usuario->execute();
+
+            $user = $usuario->fetch();
+
+        } catch (PDOException $e) {
+            $e->getMessage();
+        }
+
+        $stmt = null;
+
+        return $user;
+    }
+
+    /*
+    * Comprobacion de usuario existente.
+    */
+    function login($usuario, $password) {
+
+        // Obtenemos el usuario solicitado.
+        $user = getUser($usuario);
+        $result = false;
+
+        // Comprobamos si hemos conseguido obtener un usuario con los datos dados.
+        if ($user) {
+            // Y realizamos la verificacion de la contraseña.
+            $result = password_verify($password, $user['password']);
+        }
+
+        return $result;
+    }
 ?>

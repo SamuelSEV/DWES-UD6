@@ -1,8 +1,26 @@
 <?php
+
+    function loginUser() {
+        require 'models/componentes_model.php';
+        $error = "";
+
+        // Comprobamos las credenciales y realizamos la redireccion oportuna.
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if (login($_POST['username'], $_POST['password'])) {
+                
+                $componentes = obtenerTodos();
+                
+            } else {
+                $error = "<p style='color:red'>Contraseña incorrecta.</p>";
+            }
+        }
+        include 'views/componente_login_view.php';
+    }
+        
+    
     function listar() {
        
-        require 'models/componentes_model.php';
-       
+        require 'models/componentes_model.php';    
         $componentes = obtenerTodos();
         include 'views/componentes_view.php';
     }
