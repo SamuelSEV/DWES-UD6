@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,12 +8,13 @@
     <link rel="stylesheet" href="css/botonera.css">
     <title>Document</title>
 </head>
+
 <body>
-    
-  
-      
-        <div><?php echo $correcto?></div>
-        <div id="errores"> <?php echo $errorBorrar?></div>
-  
+   
+
+    <div><?php echo $correcto ?></div>
+    <div id="errores"> <?php echo $errorBorrar ?></div>
+
 </body>
+
 </html>

@@ -11,12 +11,12 @@
 </head>
 
 <body>
-    <form action="index.php?controller=componentes&action=listar" method="POST" enctype="multipart/form-data" class="form-register">
+    <form action="index.php?controller=componentes&action=loginUser" method="POST" enctype="multipart/form-data" class="form-register">
         <h2 class="form-titulo">Login:</h2>
         <div class="contenedor-inputs">
-            
+
             <input type="text" name="username" placeholder="Usuario" class="input-100" required /><br>
-            
+
             <input type="password" name="password" placeholder="Contraseña" class="input-100" required /><br><br>
             <input type="submit" class="input-100" value="Iniciar Sesión">
             <p><?php echo $error ?></p>

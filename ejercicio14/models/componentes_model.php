@@ -89,38 +89,52 @@
 
     }
 
-    function getUser($username) {
+    function insertarContraseña($nombre,$pass) {
         try {
             $conn = getConnection();
-            $usuario = $conn->prepare("SELECT * FROM usuarios WHERE nombre = ?");
-            $usuario->bindParam(1, $username);
+            $insert=$conn->prepare("UPDATE usuarios SET password=? WHERE password='' AND nombre=?");
+            $insert->bindParam(1, $pass);
+            $insert->bindParam(2, $nombre);
+            $insert->execute();
+            $conn = null;
+            return true;
+        } catch (PDOException $e) {
+            echo  $e;
+        }
+    } 
 
-            $usuario->execute();
+    /*
+    * Obtenemos todos los datos del usuario solicitado.
+    */
+    function getUser($nombre) {
+        try {
+            $conn = getConnection();
+            $consulta=$conn->prepare("SELECT * FROM usuarios WHERE nombre = ?");
+            $consulta->bindParam(1, $nombre);
 
-            $user = $usuario->fetch();
+            $consulta->execute();
 
+            $user = $consulta->fetch();
+            $conn = null;
+
+            return $user;
         } catch (PDOException $e) {
             $e->getMessage();
         }
-
-        $stmt = null;
-
-        return $user;
     }
+
 
     /*
     * Comprobacion de usuario existente.
     */
-    function login($usuario, $password) {
-
-        // Obtenemos el usuario solicitado.
-        $user = getUser($usuario);
+    function login($nombre, $pass) {
+     
+        $user = getUser($nombre);
         $result = false;
-
-        // Comprobamos si hemos conseguido obtener un usuario con los datos dados.
+       
+  
         if ($user) {
-            // Y realizamos la verificacion de la contraseña.
-            $result = password_verify($password, $user['password']);
+            $result = password_verify($pass, $user['password']);
         }
 
         return $result;
