@@ -13,7 +13,7 @@
 <body>
     <nav>
         <ul>
-            <li><a href="index.php?controller=componentes&action=loginUser">Página principal</a></li>
+            <li><a href="index.php?controller=usuarios&action=formularioLogin">Página principal</a></li>
             <li><a class="active" href="index.php?controller=componentes&action=insertarComponente">Nuevo elemento</a></li>
             <li><a href="index.php?controller=componentes&action=listar">Lista elementos</a></li>
             <li><a href="index.php?controller=usuarios&action=cerrarSesion">Cerrar sesion</a></li>

@@ -1,5 +1,10 @@
 <?php
-    
+    session_start();
+    if (isset($_SESSION['nombre'])) {
+            
+        header("Location: index.php?controller=componentes&action=listar");
+            
+    }
     function formularioLogin() {
         require 'models/usuarios_model.php';
         $error = "";
