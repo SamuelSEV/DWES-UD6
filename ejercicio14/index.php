@@ -6,11 +6,11 @@
     define ('CONTROLLERS_FOLDER', 'controllers/');
 
     //Si no se indica un controlador este sera el controlador que se usara.
-    define ('DEFAULT_CONTROLLER', 'componentes');
+    define ('DEFAULT_CONTROLLER', 'usuarios');
 
     //Si no se indica una accion, esta accion sera la que se usara
 
-    define ('DEFAULT_ACTION', 'listar');
+    define ('DEFAULT_ACTION', 'formularioLogin');
 
     //Obtenemos el controlador
     $controller = DEFAULT_CONTROLLER;

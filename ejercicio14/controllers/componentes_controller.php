@@ -1,57 +1,14 @@
 <?php
-
-    function loginUser() {
-        require 'models/componentes_model.php';
-        session_start();
-        $nombre = "";
-        $pass = "";
-        $error = "";
-        // Comprobamos si ya hay una sesion activa y redireccionamos en caso afirmativo.
-        if (isset($_SESSION['nombre'])) {
+    session_start();
+    if (!isset($_SESSION['nombre'])) {
             
-            header("Location: index.php?controller=componentes&action=listar");
+        header("Location: index.php?controller=usuarios&action=formularioLogin");
             
-        }
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            
-            $nombre = $_POST['username'];
-            $pass = $_POST['password'];
-            $passCode = password_hash($pass,PASSWORD_DEFAULT);
-            
-            insertarContraseña($nombre, $passCode);
-
-            if (login($nombre, $pass)) {
-                
-                $_SESSION['id'] = getUser($nombre)['id'];
-                
-                
-                header("Location: index.php?controller=componentes&action=listar");
-                
-            } else {
-                $error = "<p style='color:red'>Contraseña o nombre incorrecto.</p>";
-                
-            }
-        
-        }
-        include 'views/componente_login_view.php';
     }
-        
-    function cerrarSesion() {
-        require 'models/componentes_model.php';
-        session_start();
-        session_destroy();
-        $error = "";
-        include 'views/componente_login_view.php';
-    }
+    
     function listar() {
        
         require 'models/componentes_model.php';   
-        session_start();
-        if (isset($_SESSION['nombre'])) {
-            
-            header("Location: index.php?controller=componentes&action=listar");
-            
-        }
         $componentes = obtenerTodos();
         include 'views/componentes_view.php';
     }
@@ -60,36 +17,19 @@
         require 'models/componentes_model.php';
         
         $componente = obtenerElemento($_GET['id']);
-        session_start();
-        if (isset($_SESSION['nombre'])) {
-            
-            header("Location: index.php?controller=componentes&action=mostrarComponente");
-            
-        }  
         include 'views/componente_view.php';
     }
 
     function detalleComponente() {
         require 'models/componentes_model.php';        
         $componente = obtenerElemento($_GET['id']);
-        session_start();
-        if (isset($_SESSION['nombre'])) {
-            
-            header("Location: index.php?controller=componentes&action=detalleComponete");
-            
-        }
+       
         include 'views/componente_detalle_view.php';
     }
 
     function eliminarComponente() {
         require 'models/componentes_model.php';        
         $componente = obtenerElemento($_GET['id']);
-        session_start();
-        if (isset($_SESSION['nombre'])) {
-            
-            header("Location: index.php?controller=componentes&action=listar");
-            
-        }
         $errorBorrar = "";
         $correcto = "";
         if (!eliminarElemento($_GET['id'])){
@@ -104,12 +44,6 @@
 
     function insertarComponente() {
         require 'models/componentes_model.php';
-        session_start();
-        if (isset($_SESSION['nombre'])) {
-            
-            header("Location: index.php?controller=componentes&action=listar");
-            
-        }
         $imagen;
         $errorCrear = "";
         $noimagen = "";
@@ -178,12 +112,6 @@
 
     function editarComponente() {
         require 'models/componentes_model.php';
-        session_start();
-        if (isset($_SESSION['nombre'])) {
-            
-            header("Location: index.php?controller=componentes&action=listar");
-            
-        }
         $componente = obtenerElemento($_GET['id']);
         $errorEditar = "";
         $noimagen = "";
@@ -253,5 +181,3 @@
         }
         include 'views/componente_edit_view.php'; 
     }
-    
-?>

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/table.css">
     <link rel="stylesheet" href="css/form.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <title>Componente</title>
+    <title>Componente</title>loginUser
 </head>
 
 <body>
@@ -17,7 +17,7 @@
             <li><a href="index.php?controller=componentes&action=loginUser">Página principal</a></li>
             <li><a href="index.php?controller=componentes&action=insertarComponente">Nuevo elemento</a></li>
             <li><a href="index.php?controller=componentes&action=listar">Lista elementos</a></li>
-            <li><a href="index.php?controller=componentes&action=cerrarSesion">Cerrar sesion</a></li>
+            <li><a href="index.php?controller=usuarios&action=cerrarSesion">Cerrar sesion</a></li>
         </ul>
     </nav>
     <h1>Componente consultado</h1>

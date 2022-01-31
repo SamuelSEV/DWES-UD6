@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <form action="index.php?controller=componentes&action=loginUser" method="POST" enctype="multipart/form-data" class="form-register">
+    <form action="index.php?controller=usuarios&action=loginUser" method="POST" enctype="multipart/form-data" class="form-register">
         <h2 class="form-titulo">Login:</h2>
         <div class="contenedor-inputs">
 

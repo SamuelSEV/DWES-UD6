@@ -16,7 +16,7 @@
             <li><a href="index.php?controller=componentes&action=loginUser">Página principal</a></li>
             <li><a href="index.php?controller=componentes&action=insertarComponente">Nuevo elemento</a></li>
             <li><a href="index.php?controller=componentes&action=listar">Lista elementos</a></li>
-            <li><a href="index.php?controller=componentes&action=cerrarSesion">Cerrar sesion</a></li>
+            <li><a href="index.php?controller=usuarios&action=cerrarSesion">Cerrar sesion</a></li>
         </ul>
     </nav>
     <form action="index.php?controller=componentes&action=editarComponente" method="POST" enctype="multipart/form-data" class="form-register">

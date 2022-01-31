@@ -17,7 +17,7 @@
             <li><a href="index.php?controller=componentes&action=loginUser">Página principal</a></li>
             <li><a href="index.php?controller=componentes&action=insertarComponente">Nuevo elemento</a></li>
             <li><a class="active" href="index.php?controller=componentes&action=listar">Lista elementos</a></li>
-            <li><a href="index.php?controller=componentes&action=cerrarSesion">Cerrar sesion</a></li>
+            <li><a href="index.php?controller=usuarios&action=cerrarSesion">Cerrar sesion</a></li>
         </ul>
     </nav>
     <h1>Componentes en la bd</h1>
@@ -56,14 +56,7 @@
             ?>
         </tbody>
     </table>
-    <form action="index.php?controller=componentes&action=insertarComponente" method="POST" enctype="multipart/form-data" class="form-register">
-        <h2 class="form-titulo">CREAR COMPONENTE:</h2>
-        <div class="contenedor-inputs">
 
-            <input type="submit" value="Crear" class="btn-enviar" name="submit">
-
-        </div>
-    </form>
 </body>
 
 </html>
