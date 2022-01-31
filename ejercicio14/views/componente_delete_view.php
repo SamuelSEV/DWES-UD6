@@ -10,7 +10,14 @@
 </head>
 
 <body>
-   
+    <nav>
+        <ul>
+            <li><a href="index.php?controller=usuarios&action=formularioLogin">Página principal</a></li>
+            <li><a href="index.php?controller=componentes&action=insertarComponente">Nuevo elemento</a></li>
+            <li><a href="index.php?controller=componentes&action=listar">Lista elementos</a></li>
+            <li><a href="index.php?controller=usuarios&action=cerrarSesion">Cerrar sesion</a></li>
+        </ul>
+    </nav>
 
     <div><?php echo $correcto ?></div>
     <div id="errores"> <?php echo $errorBorrar ?></div>

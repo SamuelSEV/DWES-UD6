@@ -36,9 +36,9 @@
             $errorBorrar = "Ha ocurrido un error al borrar intentelo de nuevo";
         }
         else {
-            $correcto = "Se ha eliminado el elemento  correctamente";
+            $correcto = "Se ha eliminado el elemento con la id: $_GET[id] correctamente ";
         }
-        include 'views/componente_view.php';
+        
         include 'views/componente_delete_view.php';
     }
 
